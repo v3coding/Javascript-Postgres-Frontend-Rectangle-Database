@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rectangle Database</title>
+    <link rel="stylesheet" href="rectangles.css"/>
+</head>
+<body>
+    <section id="whiteBackground">
+        <form id="inputForm" method="post">
+            <h2>Rectangle Database</h2>
+            <h1>Interface for adding, updating and deleting a rectangle</h1>
+            <h1>Complete the form and press submit to add it to the database or fill in an ID and a field to update a rectangle</h1>
+            <h3>Valid colors include : aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow</h3><br>
+                <input type="number" placeholder="ID" class="textInput" id="id" name="id"><br>
+                <input type="text" placeholder="Name" class="textInput" id="name" name="name"><br>
+                <input type="number" placeholder="Width" class="textInput" id="width" name="width"><br>
+                <input type="number" placeholder="Height" class="textInput" id="height" name="height"><br>
+                <input type="text" placeholder="Color must be valid color name see above for list of valid colors" class="textInput" id="color" name="color"><br>
+                <input type="text" placeholder="Sentience" class="textInput" id="sentience" name="sentience"><br>
+                <input type="number" placeholder="Maximum Speed in KM/H" class="textInput" id="maxspeed" name="maxspeed"><br>
+                <input type="text" placeholder="Religion" class="textInput" id="religion" name="religion"><br>
+                <input type="submit" class="Buttons" id="submitButton" onclick="javascript: form.action ='/'">
+                <input type="submit" value="Update Rectangle" class="Buttons" id="submitButton" onclick="javascript: form.action='/update'">
+                <input type ="submit" id="deleteRectangle" class="Buttons" value="Delete Rectangle" onclick="javascript: form.action='/delete'"/>
+        </form>
+
+        <form id="inputForm">
+        <h2>Rectangles In Database</h2>
+        <h3>Click on a rectangles ID to go to the rectangles properties page</h3>
+        <ul>
+            <% results.forEach(function(r) { %>
+                <li><h1><a href="<%= 'https://pure-escarpment-80370.herokuapp.com/rectangle?id=' + r.id %>"><%= r.id %></a> - <%= r.name %></h1></li>
+            <% }); %>
+        </ul>
+        </form>
+          
+    </section>
+</body>
+</html>

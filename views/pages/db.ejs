@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="rectangles.css"/>
+</head>
+
+<body>
+
+<h2>Rectangle Database Items</h2>
+
+<ul>
+    <% results.forEach(function(r) { %>
+        <li><a href="<%= 'https://pure-escarpment-80370.herokuapp.com/rectangle?id=' + r.id %>"><%= r.id %></a> - <%= r.name %></li>
+    <% }); %>
+</ul>
+
+</body>
+</html>

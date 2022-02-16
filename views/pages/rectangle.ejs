@@ -1,0 +1,38 @@
+<html>
+
+    <head>   
+        <link rel="stylesheet" href="rectangles.css"/> 
+    </head>
+    <body>
+        <section id="whiteBackground">
+        <form id="inputForm">
+        <ul>
+        <h2>
+        RECTANGLE : 
+        ID: <%= results.id %><br>
+        Name: <%= results.name %><br>
+        Width: <%= results.width %><br>
+        Height: <%= results.height %><br>
+        Color: <%= results.color %><br>
+        Sentience: <%= results.sentience %><br>
+        Maximum Speed (KM/H): <%= results.maxspeed %><br>
+        Religion: <%= results.religion %><br>
+        </h2>
+        </ul>
+        <h2>RECTANGLE RENDER : </h2>
+
+        <div class="main-body">
+            <div class="main"> 
+            <svg width="<%= results.width %>" height="<%= results.height %>">
+              <rect width="<%= results.width %>" height="<%= results.height %>" style="fill:<%= results.color %>;stroke-width:3;stroke:rgb(0,0,0)" />
+            </svg>
+              <div class="c1">
+              </div> 
+            <div> 
+          </div>
+          <input type="button" class="Buttons" onclick="location.href='https://pure-escarpment-80370.herokuapp.com/';" value="Return to Main Page" />
+        </form>
+    </body>
+</section>
+
+</html>
